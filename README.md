@@ -10,15 +10,13 @@ This repository contains the source code and data for the paper:
 Imputing missing traffic data is crucial for reliable monitoring and prediction in intelligent transportation systems.  
 This repository implements a **PARATUCK2 decomposition-based imputation method** that captures both spatial and temporal clusters in traffic data, allowing accurate recovery of missing values even in large and complex urban road networks.
 
-The PARATUCK2 model decomposes the data matrix into three factor matrices:
+The PARATUCK2 model decomposes the data matrix *`X`* into three factor matrices:
 
-\[
-X \approx A \, R \, B^T
-\]
+*`X ≈ ARBᵀ`*
 
-- **A**: Row (spatial) latent factor matrix  
-- **R**: Latent interaction matrix  
-- **B**: Column (temporal) latent factor matrix  
+- *A*: Row (spatial) latent factor matrix  
+- *R*: Latent interaction matrix  
+- *B*: Column (temporal) latent factor matrix  
 
 The method is optimized using an **Alternating Least Squares (ALS)** approach with regularization to ensure stability.
 
@@ -33,7 +31,7 @@ The method is optimized using an **Alternating Least Squares (ALS)** approach wi
 
 ## Requirements
 
-This code was developed and tested with **Python 3.8**.  
+This code was developed and tested with Python 3.8.  
 Required Python libraries:  
 - `numpy`  
 - `pandas`  
