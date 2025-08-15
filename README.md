@@ -44,7 +44,7 @@ The script execution workflow:
    - The masked matrix *`X`*
    - Number of latent components `(p, q) = (5, 7)`
    - Regularization parameter `200`
-3. Computes the median relative error only on the originally missing entries to evaluate imputation performance.
+3. Computes the median relative error only on the missing entries to evaluate imputation performance.
 4. Prints the imputed matrix and error metric.
 
 
