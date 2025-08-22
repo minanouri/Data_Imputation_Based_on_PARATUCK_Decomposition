@@ -20,8 +20,6 @@ def PARATUCK2_imputer(X, n_latcom, reg_param, max_iter=200, eps=1e-5):
         R (np.ndarray): Latent interaction matrix of shape (p, q).
         B (np.ndarray): Column factor matrix of shape (m, q).
     """
-
-
     # Extract dimensions and randomly initialize factor matrices
     n, m = X.shape
     p, q = n_latcom
