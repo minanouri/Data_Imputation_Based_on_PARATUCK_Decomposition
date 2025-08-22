@@ -4,33 +4,23 @@ from pathlib import Path
 
 
 def PARATUCK2_imputer(X, n_latcom, reg_param, max_iter=200, eps=1e-5):
-    """
-    Perform matrix completion using the PARATUCK2 tensor decomposition method optimized via Alternating Least Squares.
+    """Perform matrix completion using the PARATUCK2 tensor decomposition method 
+    optimized via Alternating Least Squares (ALS).
 
-    Parameters
-    ----------
-    X : np.ndarray
-        Input matrix with missing values as np.nan.
-    n_latcom : tuple of int
-        Number of latent components for rows and columns (p, q).
-    reg_param : float
-        Regularization parameter for matrix inverses to improve stability.
-    max_iter : int, optional
-        Maximum number of ALS iterations (default is 200).
-    eps : float, optional
-        Convergence threshold for stopping criterion (default is 1e-5).
+    Args:
+        X (np.ndarray): Input matrix of shape (n, m) with missing values represented as np.nan.
+        n_latcom (tuple of int): Number of latent components for rows and columns (p, q).
+        reg_param (float): Regularization parameter for matrix inverses to improve stability.
+        max_iter (int, optional): Maximum number of ALS iterations. Defaults to 200.
+        eps (float, optional): Convergence threshold for stopping criterion. Defaults to 1e-5.
 
-    Returns
-    -------
-    X_hat : np.ndarray
-        The imputed matrix.
-    A : np.ndarray
-        The row factor matrix (n x p).
-    R : np.ndarray
-        The latent interaction matrix (p x q).
-    B : np.ndarray
-        The column factor matrix (m x q).
+    Returns:
+        X_hat (np.ndarray): The imputed (completed) matrix.
+        A (np.ndarray): Row factor matrix of shape (n, p).
+        R (np.ndarray): Latent interaction matrix of shape (p, q).
+        B (np.ndarray): Column factor matrix of shape (m, q).
     """
+
 
     # Extract dimensions and randomly initialize factor matrices
     n, m = X.shape
